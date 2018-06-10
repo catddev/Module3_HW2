@@ -130,6 +130,7 @@ start:
 	case 6:
 	{
 		int n, x, y, z;
+		//x - 440; y - 125, z - 15 
 		printf("\nenter number of trips:\t");
 		scanf("%d", &n);
 		x = n / 60;
@@ -142,7 +143,7 @@ start:
 		if (z > 8)
 		{
 			y = y + 1;
-			z = 0;
+			z = 0;                                                    
 		}
 		if (y > 3)
 		{
@@ -150,12 +151,43 @@ start:
 			y = 0;
 			z = 0;
 		}
-		printf("%d tickets for 60 trips, %d tickets for 10 trips, %d tickets for 1 trip\n\n", x, y, z);
+		printf("%d tickets for 60 trips \n%d tickets for 10 trips \n%d tickets for 1 trip\n\n", x, y, z);
 	}
 	break;
 	case 7:
 	{
+		int n, t1, t5, t10, t20, t60;
+		// t1 - 15, t5 - 70, t10 - 125, t20 - 230, t60 - 440
+		printf("\nenter number of trips:\t");
+		scanf("%d", &n);
+		t60 = n / 60;
+		t20 = n % 60 / 20;
+		t10 = n % 60 % 20 / 10;
+		t5 = n % 60 % 20 % 10 / 5;
+		t1 = n % 60 % 20 % 10 % 5;
 
+		if (n % 60 > 35) //if 36: 230+125+70+15=440 the same price for 60 trips
+		{
+			t60 = t60 + 1;
+			t20 = 0;
+			t10 = 0;
+			t5 = 0;
+			t1 = 0;
+		}
+		if (n % 60 % 20 > 17) //if 18: 125+70+15*3=240 > 230(price for 20 trips ticket)
+		{
+			t20 = t20 + 1;
+			t10 = 0;
+			t5 = 0;
+			t1 = 0;
+		}
+		if (n % 60 % 20 % 10 > 8) //if 9: 70+15*4=130 > 125(price for 10 trips ticket)
+		{
+			t10 = t10 + 1;
+			t5 = 0;
+			t1 = 0;
+		}
+		printf("%d tickets for 60 trips \n%d tickets for 20 trips \n%d tickets for 10 trips \n%d tickets for 5 trips \n%d tickets for 1 trip\n\n", t60, t20, t10, t5, t1);
 	}
 	break;
 	default:
