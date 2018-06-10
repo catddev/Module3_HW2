@@ -25,27 +25,106 @@ start:
 	{
 	case 1:
 	{
-
+		int h, m, s;
+		s = 0 +rand()% 86400;
+		printf("\n%d seconds passed\n\n", s);
+		h = s / 3600;
+		m = (s % 3600) / 60;
+		s = s % 3600 % 60;
+		printf("%d hours %d minutes %d seconds\n\n", h, m, s);
 	}
 	break;
 	case 2:
 	{
-
+		int x = 10 + rand() % 99999;
+		printf("\n%d\n\n", x);
+		int x1, x2, x3, x4, x5;
+		
+		if (x / 10000 != 0)
+		{
+			x1 = x % 10;
+			x = x / 10;
+			x2 = x % 10;
+			x = x / 10;
+			x3 = x % 10;
+			x = x / 10;
+			x4 = x % 10;
+			x = x / 10;
+			x5 = x % 10;
+			printf("%d%d%d%d%d\n\n", x1, x2, x3, x4, x5);
+		}
+		else if (x / 1000 != 0)
+		{
+			x1 = x % 10;
+			x = x / 10;
+			x2 = x % 10;
+			x = x / 10;
+			x3 = x % 10;
+			x = x / 10;
+			x4 = x % 10;
+			printf("%d%d%d%d\n\n", x1, x2, x3, x4);
+		}
+		else if (x / 100 != 0)
+		{
+			x1 = x % 10;
+			x = x / 10;
+			x2 = x % 10;
+			x = x / 10;
+			x3 = x % 10;
+			printf("%d%d%d\n\n", x1, x2, x3);
+		}
+		else if (x / 10 != 0)
+		{
+			x1 = x % 10;
+			x = x / 10;
+			x2 = x % 10;
+			printf("%d%d\n\n", x1, x2);
+		}
 	}
 	break;
 	case 3:
 	{
+		int n, x1, x2, x3, x4, x5;
+		printf("\nenter 5-digit number:\t");
+		scanf("%d", &n);
+		if (n > 9999 && n < 100000)
+		{
+			x1 = n % 10;
+			n = n / 10;
+			x2 = n % 10;
+			n = n / 100;
+			x4 = n % 10;
+			n = n / 10;
+			x5 = n % 10;
 
+			if (x1 == x5&&x2 == x4) printf("\ntrue, palindrom!\n\n");
+			else printf("\nfalse, not a palindrom!\n\n");
+		}
+		else ("error, please enter only 5-digit number\n\n");
 	}
 	break;
 	case 4:
 	{
-
+		/*int n, x;*/
+		
 	}
 	break;
 	case 5:
 	{
+		int score = 2 + rand() % 4;
+		printf("\n%d\n\n", score);
 
+		switch (score)
+		{
+		case 2: printf("\nнеудовлетворительно\n\n");
+			break;
+		case 3: printf("\nудовлетворительно\n\n");
+			break;
+		case 4: printf("\nхорошо\n\n");
+			break;
+		case 5: printf("\nотлично\n\n");
+			break;
+		}
 	}
 	break;
 	case 6:
