@@ -105,8 +105,17 @@ start:
 	break;
 	case 4:
 	{
-		/*int n, x;*/
-		
+		int n, x;
+		printf("\nPerfect numbers within given interval:\n\n");
+		for (n = 1; n < 1000; n++)
+		{
+			x = pow(2, n) - 1;
+			if (x == 3 || x == 7 || x == 31)  //то есть простое число Мерсенна
+			{
+				int p = pow(2, (n - 1))*(pow(2, n) - 1);
+				printf("%d\n\n", p);
+			}
+		}	
 	}
 	break;
 	case 5:
