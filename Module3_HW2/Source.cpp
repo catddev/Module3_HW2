@@ -36,7 +36,7 @@ start:
 	break;
 	case 2:
 	{
-		int x = 10 + rand() % 99999;
+		int x = 10 + rand() % 99990;
 		printf("\n%d\n\n", x);
 		int x1, x2, x3, x4, x5;
 		
